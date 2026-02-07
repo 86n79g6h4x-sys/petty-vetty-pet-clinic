@@ -3,101 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petty Vetty Clinic | دكتور محمد - رعاية بيطرية متميزة</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Petty Vetty Clinic | دكتور محمد - رعاية 5 نجوم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --main: #20b2aa; --accent: #ff6b6b; --bg: #f0f9f8; --dark: #2c3e50; }
-        * { box-sizing: border-box; transition: 0.3s; }
-        body { font-family: 'Cairo', sans-serif; margin: 0; background: #fff; overflow-x: hidden; text-align: right; }
-        
-        /* Navbar */
-        nav { background: white; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 26px; font-weight: 900; color: var(--main); }
-        .rating-chip { background: var(--bg); color: var(--main); padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; }
-
-        /* Hero */
-        .hero { 
-            height: 75vh; 
-            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
-                        url('https://images.unsplash.com/photo-1599443015574-be5fe8a05783?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
+        :root {
+            --primary: #20b2aa; /* تيفاني */
+            --secondary: #ff6b6b; /* مرجاني */
+            --dark: #1e272e;
+            --light: #f1f2f6;
         }
-        .hero h1 { font-size: 3.8rem; margin: 0; color: var(--dark); }
-        .hero p { font-size: 1.4rem; color: #555; max-width: 700px; margin-top: 15px; }
-        .btn-main { background: var(--main); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 25px; display: inline-block; box-shadow: 0 10px 20px rgba(32, 178, 170, 0.3); }
+        
+        * { box-sizing: border-box; transition: all 0.4s ease; }
+        body { font-family: 'Cairo', sans-serif; margin: 0; background: #fff; color: var(--dark); overflow-x: hidden; }
 
-        /* Reviews */
-        .section { padding: 70px 8%; text-align: center; }
-        .reviews-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
-        .rev-card { background: var(--bg); padding: 30px; border-radius: 25px; text-align: right; border-bottom: 5px solid var(--main); position: relative; }
-        .rev-card i { color: #f1c40f; font-size: 0.8rem; }
-        .rev-author { font-weight: bold; color: var(--main); display: block; margin-top: 15px; }
+        /* الأنميشن اللي بيشد الانتباه */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        /* Info & Location */
-        .info-box { background: var(--dark); color: white; padding: 50px; border-radius: 30px; margin: 40px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
-        .info-box a { color: var(--main); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; border: 1px solid var(--main); padding: 5px 15px; border-radius: 15px; }
-        .info-box a:hover { background: var(--main); color: white; }
+        /* Navbar */
+        nav { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 15px 8%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+            position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 28px; font-weight: 900; color: var(--primary); font-family: 'Montserrat', sans-serif; }
+        .logo span { color: var(--secondary); }
 
-        /* WhatsApp */
-        .wa-btn { position: fixed; bottom: 30px; left: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 35px; text-decoration: none; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        /* Hero Section - صور وحركة */
+        .hero { 
+            height: 85vh; 
+            background: linear-gradient(135deg, rgba(32, 178, 170, 0.8), rgba(255, 107, 107, 0.4)), 
+                        url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=2071&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            color: white; text-align: center; padding: 20px;
+        }
+        .hero h1 { font-size: 4.5rem; margin: 0; animation: fadeInDown 1s; text-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .hero p { font-size: 1.6rem; margin-top: 15px; background: rgba(0,0,0,0.2); padding: 5px 20px; border-radius: 10px; }
+        .btn-main { 
+            background: #fff; color: var(--primary); padding: 18px 45px; 
+            border-radius: 50px; text-decoration: none; font-weight: 900; 
+            margin-top: 35px; font-size: 1.2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .btn-main:hover { transform: scale(1.1) rotate(-2deg); background: var(--secondary); color: #fff; }
 
-        @media (max-width: 768px) { .info-box { grid-template-columns: 1fr; text-align: center; } .hero h1 { font-size: 2.5rem; } }
+        /* Services - صور مصغرة وأيقونات */
+        .section { padding: 80px 8%; text-align: center; }
+        .section h2 { font-size: 3rem; color: var(--dark); margin-bottom: 50px; position: relative; }
+        .section h2::after { content: ''; width: 80px; height: 5px; background: var(--secondary); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .s-card { 
+            background: var(--light); padding: 40px; border-radius: 30px; 
+            cursor: pointer; position: relative; overflow: hidden;
+        }
+        .s-card i { font-size: 50px; color: var(--primary); margin-bottom: 20px; }
+        .s-card:hover { background: var(--primary); color: white; transform: translateY(-15px); }
+        .s-card:hover i { color: white; }
+
+        /* Reviews - التقييمات بشكل "الفقاعة" */
+        .reviews { background: var(--dark); color: white; padding: 80px 8%; }
+        .rev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .rev-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .rev-card .stars { color: #f1c40f; margin-bottom: 10px; }
+        .rev-card p { font-style: italic; line-height: 1.8; font-size: 1.1rem; }
+        .rev-card strong { color: var(--primary); display: block; margin-top: 15px; }
+
+        /* Info Box */
+        .info-panel { 
+            background: var(--primary); color: white; 
+            margin: 40px 8%; border-radius: 40px; padding: 50px; 
+            display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;
+            box-shadow: 0 20px 40px rgba(32, 178, 170, 0.3);
+        }
+        .info-item { text-align: center; margin: 20px; }
+        .info-item h3 { font-size: 2rem; margin: 0; }
+
+        /* Floating WhatsApp */
+        .wa-float { 
+            position: fixed; bottom: 30px; left: 30px; 
+            background: #25d366; color: white; 
+            width: 70px; height: 70px; border-radius: 50%; 
+            display: flex; justify-content: center; align-items: center; 
+            font-size: 40px; text-decoration: none; z-index: 2000; 
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); 
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+        footer { background: #111; color: #666; padding: 40px; text-align: center; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Petty<span>Vetty</span> 🐾</div>
-        <div class="rating-chip">⭐ 4.6 (114 Reviews)</div>
+        <div class="logo">PETTY<span>VETTY</span></div>
+        <div style="font-weight: bold; color: var(--primary);"><i class="fas fa-star"></i> 4.6 (114)</div>
     </nav>
 
     <section class="hero">
-        <h1>Petty Vetty Pet Clinic</h1>
-        <p>الرعاية الصحية الأفضل لحيوانك الأليف في العبور تحت إشراف دكتور محمد</p>
-        <a href="https://wa.me/201142488708" class="btn-main">احجز موعدك الآن</a>
+        <h1>Petty Vetty Clinic</h1>
+        <p>الرفق والخبرة في مكان واحد.. نعتني بأليفك كأنه فرد من عائلتنا</p>
+        <a href="https://wa.me/201142488708" class="btn-main">احجز موعدك الآن <i class="fas fa-calendar-check"></i></a>
     </section>
 
     <section class="section">
-        <h2>لماذا يفضلنا أصحاب الأليفة؟</h2>
-        <div class="reviews-container">
-            <div class="rev-card">
-                <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"I can’t thank Dr. Mohamed enough for saving my cat after her difficult birth. His patience and care were incredible. ❤️"</p>
-                <span class="rev-author">- Roqia Sayed</span>
+        <h2>لماذا تختار عيادتنا؟</h2>
+        <div class="services-grid">
+            <div class="s-card">
+                <i class="fas fa-user-md"></i>
+                <h3>دكتور محمد</h3>
+                <p>خبرة طبية متميزة وتعامل راقٍ مع كل الحالات.</p>
             </div>
-            <div class="rev-card">
-                <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"Dr: Mohamad is The best vet you will ever see, and the clinic is very clean and specialized In all animal supplies."</p>
-                <span class="rev-author">- Dai Sameh</span>
+            <div class="s-card">
+                <i class="fas fa-sparkles"></i>
+                <h3>نظافة فائقة</h3>
+                <p>بيئة معقمة بالكامل لضمان سلامة حيوانك الأليف.</p>
             </div>
-            <div class="rev-card">
-                <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>"Dr. Muhammad is really kind and extremely professional. Helped us with our little kitten who was sick."</p>
-                <span class="rev-author">- Areen Iftikhar</span>
+            <div class="s-card">
+                <i class="fas fa-soap"></i>
+                <h3>Grooming احترافي</h3>
+                <p>خدمات حلاقة واستحمام تجعل أليفك في أبهى صورة.</p>
             </div>
         </div>
     </section>
 
-    <div class="info-box">
-        <div>
-            <h3>📍 موقع العيادة</h3>
-            <p>بجوار مول القصر، Obour، القاهرة 6361261</p>
-            <a href="https://www.google.com/maps/place/Petty+Vetty+Pet+Clinic/@30.2210766,31.4655553,15z/data=!4m10!1m2!2m1!1spet++veterinary!3m6!1s0x145805db753d7a63:0xea4cfe40c9480f8c!8m2!3d30.2204096!4d31.4788908!15sCg9wZXQgIHZldGVyaW5hcnlaECIOcGV0IHZldGVyaW5hcnmSAQx2ZXRlcmluYXJpYW6aASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTk9PVzh0U2tSbkVBReABAPoBBAgAEEs!16s%2Fg%2F11r_v1f_4q?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">فتح الموقع على الخريطة ←</a>
+    <section class="reviews">
+        <h2 style="color: white; text-align: center;">كلمات نعتز بها من عملائنا</h2>
+        <div class="rev-grid">
+            <div class="rev-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"His patience and care were incredible. Zozo and I are forever thankful❤️"</p>
+                <strong>- Roqia Sayed</strong>
+            </div>
+            <div class="rev-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"The best vet you will ever see, clinic is very clean and specialized."</p>
+                <strong>- Dai Sameh</strong>
+            </div>
+            <div class="rev-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Dr. Muhammad is really kind and extremely professional. Highly recommended!"</p>
+                <strong>- Areen Iftikhar</strong>
+            </div>
         </div>
-        <div>
-            <h3>🕒 مواعيد العمل</h3>
-            <p>يومياً حتى الساعة 10 مساءً</p>
-            <p>📞 هاتف: 01142488708</p>
+    </section>
+
+    <div class="info-panel">
+        <div class="info-item">
+            <i class="fas fa-map-marker-alt" style="font-size: 30px;"></i>
+            <h3>موقعنا</h3>
+            <p>بجوار مول القصر، العبور</p>
+            <a href="https://www.google.com/maps/place/Petty+Vetty+Pet+Clinic/@30.2210766,31.4655553,15z/data=!4m10!1m2!2m1!1spet++veterinary!3m6!1s0x145805db753d7a63:0xea4cfe40c9480f8c!8m2!3d30.2204096!4d31.4788908!15sCg9wZXQgIHZldGVyaW5hcnlaECIOcGV0IHZldGVyaW5hcnmSAQx2ZXRlcmluYXJpYW6aASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTk9PVzh0U2tSbkVBReABAPoBBAgAEEs!16s%2Fg%2F11r_v1f_4q?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: white; font-weight: bold;">فتح الخريطة ←</a>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-clock" style="font-size: 30px;"></i>
+            <h3>مواعيدنا</h3>
+            <p>يومياً حتى 10:00 مساءً</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-phone-alt" style="font-size: 30px;"></i>
+            <h3>اتصل بنا</h3>
+            <p>01142488708</p>
         </div>
     </div>
 
-    <a href="https://wa.me/201142488708" class="wa-btn"><i class="fab fa-whatsapp"></i></a>
-
-    <footer style="text-align: center; padding: 30px; color: #888;">
-        © 2026 Petty Vetty Pet Clinic - العبور
+    <footer>
+        <p>© 2026 Petty Vetty Clinic | Designed for Excellence</p>
     </footer>
+
+    <a href="https://wa.me/201142488708" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
